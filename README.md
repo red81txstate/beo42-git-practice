@@ -1,1 +1,3 @@
-# beo42-git-practice
+# Developer Profile
+- **Name:** Robert
+- **Hobby:** Cooking
