@@ -1,5 +1,5 @@
 # Developer Profile
 
-- **Name:** Robert
+- **Developer:** Robert
 - **Hobby:** Cooking
 - **Preferred Development Tool:** VS Code
