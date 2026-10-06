@@ -2,12 +2,12 @@
 
 ## Project Name
 
-TBD
+Buddy System
 
-## Problem to solve
+## Problem to Solve
 
 TBD
 
 ## Target User
 
-TBD
+Texas State CS Students
