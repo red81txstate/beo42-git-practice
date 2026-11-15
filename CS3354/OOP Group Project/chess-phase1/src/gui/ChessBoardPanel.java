@@ -52,7 +52,7 @@ public class ChessBoardPanel extends JPanel {
         }
     }
 
-    private void handleClick(Position clicked) {
+        private void handleClick(Position clicked) {
         if (selected == null) {
             Piece p = currentBoard.getPiece(clicked);
             if (p != null) {
@@ -60,10 +60,24 @@ public class ChessBoardPanel extends JPanel {
                 System.out.println("Selected: " + clicked.toAlgebraic());
             }
         } else {
+            Piece target = currentBoard.getPiece(clicked);
+            Piece moving = currentBoard.getPiece(selected);
+
+            // Do the move (overwrites = capture)
             currentBoard.movePiece(selected, clicked);
+
+            // Check if we captured a King
+            if (target != null && target.getSymbol().toLowerCase().contains("k")) {
+                String winner = moving.getColor().toString();
+                javax.swing.JOptionPane.showMessageDialog(this,
+                    winner + " wins by capturing the King!",
+                    "Game Over",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                System.exit(0);
+            }
+
             selected = null;
             refresh(currentBoard);
             System.out.println("Moved to: " + clicked.toAlgebraic());
         }
     }
-}
